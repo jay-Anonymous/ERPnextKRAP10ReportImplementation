@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include Techsavanna.ke *.css
+recursive-include Techsavanna.ke *.csv
+recursive-include Techsavanna.ke *.html
+recursive-include Techsavanna.ke *.icon
+recursive-include Techsavanna.ke*.js
+recursive-include Techsavanna.ke*.json
+recursive-include Techsavanna.ke *.md
+recursive-include Techsavanna.ke*.png
+recursive-include Techsavanna.ke *.py
+recursive-include Techsavanna.ke*.svg
+recursive-include Techsavanna.ke*.txt
+recursive-exclude Techsavanna.ke*.py
