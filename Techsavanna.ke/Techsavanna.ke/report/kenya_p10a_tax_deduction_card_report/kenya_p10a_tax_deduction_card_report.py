@@ -67,24 +67,24 @@ def execute(filters=None):
 
             basic_salary_amt = get_p10a_tax_deduction_card_amt(filters, emp.name,
                                                               month_start_date, month_end_date,
-                                                              p9a_tax_deduction_card_type[0],
+                                                              p10a_tax_deduction_card_type[0],
                                                               currency, company_currency)
             benefits_non_cash_amt = get_p10a_tax_deduction_card_amt(filters, emp.name,
                                                               month_start_date, month_end_date,
-                                                              p9a_tax_deduction_card_type[1],
+                                                              p10a_tax_deduction_card_type[1],
                                                               currency, company_currency)
             value_of_quarters_amt = get_p10a_tax_deduction_card_amt(filters, emp.name,
                                                               month_start_date, month_end_date,
-                                                              p9a_tax_deduction_card_type[2],
+                                                              p10a_tax_deduction_card_type[2],
                                                               currency, company_currency)
             total_gross_pay_amt = get_p10a_tax_deduction_card_gross_pay(filters, emp.name,
                                                               month_start_date, month_end_date,
                                                               currency, company_currency)
             e1_defined_contribution_retirement_scheme_amt = flt((30/100) * basic_salary_amt)
 
-            e2_defined_contribution_retirement_scheme_amt = get_p9a_tax_deduction_card_amt(filters, emp.name,
+            e2_defined_contribution_retirement_scheme_amt = get_p10a_tax_deduction_card_amt(filters, emp.name,
                                                               month_start_date, month_end_date,
-                                                              p9a_tax_deduction_card_type[5],
+                                                              p10a_tax_deduction_card_type[5],
                                                               currency, company_currency)
             if (basic_salary_amt > 0):
                 e3_defined_contribution_retirement_scheme_amt = get_p10a_tax_deduction_card_fixed_component_amt(
@@ -281,7 +281,7 @@ def get_p10a_tax_deduction_card_amt(filters, employee, month_start_date, month_e
             ss.end_date, ss.company,
 	        IFNULL(sd.amount,0) as amt,
             ss.exchange_rate,
-		    sc.p9a_tax_deduction_card_type
+		    sc.p10a_tax_deduction_card_type
 		FROM
             `tabSalary Detail` sd,
             `tabSalary Slip` ss,
@@ -290,7 +290,7 @@ def get_p10a_tax_deduction_card_amt(filters, employee, month_start_date, month_e
             sd.parent=ss.name
             AND sd.salary_component = sc.name
             AND ss.docstatus = 1
-            AND sc.p9a_tax_deduction_card_type =  %(p9a_tax_deduction_card_type)s
+            AND sc.p10a_tax_deduction_card_type =  %(p10a_tax_deduction_card_type)s
             AND ss.employee = %(employee)s
             AND ss.company = %(company)s
             AND ss.start_date = %(month_start_date)s
@@ -299,7 +299,7 @@ def get_p10a_tax_deduction_card_amt(filters, employee, month_start_date, month_e
 		ORDER BY
             ss.employee,
             ss.start_date """, {
-                'p9a_tax_deduction_card_type' : p9a_tax_deduction_card_type,
+                'p10a_tax_deduction_card_type' : p10a_tax_deduction_card_type,
                 'employee': employee,
                 'company': filters.get("company"),
                 'month_start_date': month_start_date,
@@ -314,7 +314,7 @@ def get_p10a_tax_deduction_card_amt(filters, employee, month_start_date, month_e
         else:
             p10a_tax_deduction_card_amount += flt(d.amt)
 
-    return p9a_tax_deduction_card_amount
+    return p10a_tax_deduction_card_amount
 
 def get_p10a_tax_deduction_card_gross_pay(filters, employee, month_start_date, month_end_date, currency, company_currency): 
     currency_filter = ''
