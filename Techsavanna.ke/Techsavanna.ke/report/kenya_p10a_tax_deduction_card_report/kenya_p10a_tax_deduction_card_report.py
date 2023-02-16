@@ -27,11 +27,11 @@ def execute(filters=None):
         frappe.throw(_("Fiscal Year {0} does not exist").format(filters.fiscal_year))
     else:
         fiscal_year_start_date = getdate(fiscal_year.year_start_date)
-        p9a_year_start_date = getdate(get_year_start(fiscal_year_start_date))
-        p9a_year_end_date = getdate(get_year_ending(fiscal_year_start_date))
+        p10a_year_start_date = getdate(get_year_start(fiscal_year_start_date))
+        p10a_year_end_date = getdate(get_year_ending(fiscal_year_start_date))
         validate_dates(p10a_year_start_date, p10a_year_end_date)
-        p9a_tdc_year_name = filters.fiscal_year
-        p9a_tdc_year = p10a_tdc_year_name[0:4] # for cases where fiscal year starts between the year
+        p10a_tdc_year_name = filters.fiscal_year
+        p10a_tdc_year = p10a_tdc_year_name[0:4] # for cases where fiscal year starts between the year
         no_of_months = get_months(p10a_year_start_date, p10a_year_end_date)
 
     columns = get_columns()
