@@ -116,7 +116,7 @@ def execute(filters=None):
                                                               month_start_date, month_end_date,
                                                               p10a_tax_deduction_card_type[12],
                                                               currency, company_currency)
-            paye_tax_amt = get_p9a_tax_deduction_card_amt(filters, emp.name,
+            paye_tax_amt = get_p10a_tax_deduction_card_amt(filters, emp.name,
                                                               month_start_date, month_end_date,
                                                               p10a_tax_deduction_card_type[13],
                                                               currency, company_currency)
