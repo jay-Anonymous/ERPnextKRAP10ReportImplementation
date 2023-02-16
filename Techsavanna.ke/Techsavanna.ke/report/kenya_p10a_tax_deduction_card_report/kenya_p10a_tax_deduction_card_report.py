@@ -94,25 +94,25 @@ def execute(filters=None):
             lowest_of_column_e = min(e1_defined_contribution_retirement_scheme_amt, 
                                      e2_defined_contribution_retirement_scheme_amt,
                                      e3_defined_contribution_retirement_scheme_amt)
-            owner_occupied_interest_amt = get_p9a_tax_deduction_card_amt(filters, emp.name,
+            owner_occupied_interest_amt = get_p10a_tax_deduction_card_amt(filters, emp.name,
                                                               month_start_date, month_end_date,
                                                               p10a_tax_deduction_card_type[7],
                                                               currency, company_currency)
             retirement_contribution_and_owner_occupied_interest_amt = (lowest_of_column_e 
                                                                        + owner_occupied_interest_amt)
-            chargeable_pay_amt = get_p9a_tax_deduction_card_amt(filters, emp.name,
+            chargeable_pay_amt = get_p10a_tax_deduction_card_amt(filters, emp.name,
                                                               month_start_date, month_end_date,
                                                               p10a_tax_deduction_card_type[9],
                                                               currency, company_currency)
-            tax_charged_amt = get_p9a_tax_deduction_card_amt(filters, emp.name,
+            tax_charged_amt = get_p10a_tax_deduction_card_amt(filters, emp.name,
                                                               month_start_date, month_end_date,
                                                               p10a_tax_deduction_card_type[10],
                                                               currency, company_currency)
-            personal_relief_amt = get_p9a_tax_deduction_card_amt(filters, emp.name,
+            personal_relief_amt = get_p10a_tax_deduction_card_amt(filters, emp.name,
                                                               month_start_date, month_end_date,
                                                               p10a_tax_deduction_card_type[11],
                                                               currency, company_currency)
-            insurance_relief_amt = get_p9a_tax_deduction_card_amt(filters, emp.name,
+            insurance_relief_amt = get_p10a_tax_deduction_card_amt(filters, emp.name,
                                                               month_start_date, month_end_date,
                                                               p10a_tax_deduction_card_type[12],
                                                               currency, company_currency)
