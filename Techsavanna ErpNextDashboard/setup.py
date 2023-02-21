@@ -11,7 +11,7 @@ setup(
     version=version,
     description='Dashboard App',
     author='Frappe',
-    author_email='baljeet@ameotech.com',
+    author_email='gnjakai@yahoo.com',
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
