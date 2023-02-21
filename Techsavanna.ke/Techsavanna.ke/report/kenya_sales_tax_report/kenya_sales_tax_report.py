@@ -32,6 +32,8 @@ class KenyaSalesTaxReport(object):
  
 	def get_columns(self):
 		return [
+			
+			
 				{
 					"label": _("Customer"),
 					"fieldname": "customer",
