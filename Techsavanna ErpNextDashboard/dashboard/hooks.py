@@ -1,11 +1,10 @@
 app_name = "DashBoard"
 app_title = "DASHBOARD"
-app_publisher = "Baljeet"
+app_publisher = "Gerald Njakai"
 app_description = "Dashboard App"
 app_icon = "icon-asterisk"
 app_color = "#001122"
-app_email = "baljeet@ameotech.com"
-app_url = "www.ameotech.com"
+app_email = "gnjakai@yahoo.com"
 app_version = "1.0.0"
 
 # Includes in <head>
