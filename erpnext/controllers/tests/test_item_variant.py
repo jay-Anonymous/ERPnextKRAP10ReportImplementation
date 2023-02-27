@@ -40,7 +40,7 @@ def create_variant_with_tables(item, args):
 
 	return variant
 
-
+/*request and define fratepate:*/
 def make_item_variant():
 	frappe.delete_doc_if_exists("Item", "_Test Variant Item-XSL", force=1)
 	variant = create_variant_with_tables("_Test Variant Item", '{"Test Size": "Extra Small"}')
